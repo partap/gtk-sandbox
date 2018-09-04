@@ -9,17 +9,17 @@ struct _MyScaledImage
 
 G_DEFINE_TYPE(MyScaledImage, my_scaled_image, GTK_TYPE_IMAGE)
 
-static void 
-print_preferred_size (GtkWidget *widget) 
-{
-	gint natural_width;
-	gint natural_height;
-	gint minimum_width;
-	gint minimum_height;
-	gtk_widget_get_preferred_width(widget, &minimum_width, &natural_width);
-	gtk_widget_get_preferred_height(widget, &minimum_height, &natural_height);
-	g_print("preferred size - min: %dx%d, natural: %dx%d\n", minimum_width, minimum_height, natural_width, natural_height);
-}
+// static void 
+// print_preferred_size (GtkWidget *widget) 
+// {
+// 	gint natural_width;
+// 	gint natural_height;
+// 	gint minimum_width;
+// 	gint minimum_height;
+// 	gtk_widget_get_preferred_width(widget, &minimum_width, &natural_width);
+// 	gtk_widget_get_preferred_height(widget, &minimum_height, &natural_height);
+// 	g_print("preferred size - min: %dx%d, natural: %dx%d\n", minimum_width, minimum_height, natural_width, natural_height);
+// }
 
 static void
 my_scaled_image_size_allocate (MyScaledImage *image, 
