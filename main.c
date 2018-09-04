@@ -106,7 +106,7 @@ my_app_new (void)
 	if (!myapp-> pixbuf) {
 		g_error("Unable to load %s\n", BACKGROUND_FILE);
 	}
-	g_print("Loaded pixbuf from %s: %x\n", BACKGROUND_FILE, (guint) myapp->pixbuf);
+	g_print("Loaded pixbuf from %s: %lx\n", BACKGROUND_FILE, (long unsigned int) myapp->pixbuf);
 	myapp->background = GTK_WIDGET (gtk_builder_get_object (builder, "background"));
 	if (MY_IS_SCALED_IMAGE (myapp->background)) {
 		g_print("background is MyScaledImage\n");
@@ -127,14 +127,23 @@ my_app_new (void)
 	return myapp;
 }
 
+// static void 
+// print_supported_pixbuf_formats (void)
+// {
+// 	GSList *gslist;
+// 	GdkPixbufFormat *fmt;
+	
+// 	gslist = gdk_pixbuf_get_formats ();
+
+// }
+
 int 
 main (int argc,
 	  char **argv)
 {
 	MyApp *myapp;
-
 	gtk_init (&argc, &argv);
-
+	// print_supported_pixbuf_formats ();
 	myapp = my_app_new ();
 
 	gtk_main ();
